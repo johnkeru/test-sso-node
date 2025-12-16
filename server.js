@@ -45,7 +45,7 @@ app.post("/", (req, res) => {
       httpOnly: true,
       secure: true, // required for custom domain
       sameSite: "lax",
-      domain: "*.vercel.app", // custom domain
+      domain: "*.nia.gov.ph", // custom domain
       maxAge: 60 * 60 * 1000, // 1 hour
     });
 
@@ -67,7 +67,7 @@ app.get("/dashboard", auth, (req, res) => {
 // Logout
 app.get("/logout", (req, res) => {
   res.clearCookie("auth_token", {
-    domain: "*.vercel.app",
+    domain: "*.nia.gov.ph",
   });
   res.redirect("/");
 });
